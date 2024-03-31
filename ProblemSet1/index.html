@@ -19,28 +19,26 @@
 
     <!-- 欢迎信息容器 -->
     <div id="homepage-container">
-      <img src="img\person_zombie_02.png" alt="Description of the image">
+      <img src="img/person_zombie_02.png" alt="Description of the image">
         <div id="welcomeMessage"></div>
-        <button id="startButton">我要报名！</button>
+        <button id="startButton">愿意！</button>
         <div id="nameForm">
-            <input type="text" id="nameInput" placeholder="我该怎么称呼你？">
-            <button id="submitButton">提交</button>
+            <input type="text" id="nameInput" placeholder="你的称呼是…">
         </div>
     </div>
 
-
-        <div id = "game">
+        <div id = "game" >
             <div id = "homepage">
-                <!-- <img src="img/wine.jpg" alt="Description of the image"> -->
-                <div class = "lvl" id = "very-hard" onclick = "OpenLevel(3)">START</div>
+              <!-- <div id = "homepage-heading">WATER SORT PUZZLE</div> -->
+              <div class = "lvl" id = "very-hard">START</div>
                 <br><br><br>
-                <div id = "rules-btn" onclick = "ShowRules();">RULES</div>
+                <div id = "rules-btn">RULES</div>
             </div>
-            <div id = "level"></div>
+<div id = "level"></div>
             <div id = "rules-page">
                 <div id = "rules">
                     <div id = "rules-heading">RULES</div>
-                    <div id = "rules-text">There will be some glasses (or test tubes to be exact xD), your task is to put the liquids with same color together! You can transfer different colored water from one glass to another only if the other glass is empty or its top most layer of water is of the same color as that of the one from which water is to be taken. The glass you have selected will be highlighted to prevent confusion. Restart button will take you back to the beginning of the level, also every time you open the same level the water will be shuffled. Check out the real game 'Water sort puzzle' on playstore, I have cloned it.</div>
+                    <div id = "rules-text">这里有一些酒杯（虽然看起来很像试管XD）<br>你的任务是将相同颜色的鸡尾酒放在一起！<br>你只能将不同颜色的鸡尾酒从一个酒杯转移到另一个酒杯<br>前提是另一个酒杯要么是空的，要么它的最顶层酒层与要取水的酒杯的颜色相同<br>实在解不出来，可以选择Restart重新打乱！</div>
                     <div id = "back" onclick = "HideRules();">BACK</div>
                 </div>
             </div>

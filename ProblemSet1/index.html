@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8" />
+        <title>Sannketu's O2Bar</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+    </head>
+
+
+    <body>
+      <!-- 标题容器 -->
+    <div id="title-container">
+        <h1>O2 Bar</h1>
+        <div id="pink-block"></div>
+    </div>
+
+    <!-- 欢迎信息容器 -->
+    <div id="homepage-container">
+      <img src="img\person_zombie_02.png" alt="Description of the image">
+        <div id="welcomeMessage"></div>
+        <button id="startButton">我要报名！</button>
+        <div id="nameForm">
+            <input type="text" id="nameInput" placeholder="我该怎么称呼你？">
+            <button id="submitButton">提交</button>
+        </div>
+    </div>
+
+
+        <div id = "game">
+            <div id = "homepage">
+                <!-- <img src="img/wine.jpg" alt="Description of the image"> -->
+                <div class = "lvl" id = "very-hard" onclick = "OpenLevel(3)">START</div>
+                <br><br><br>
+                <div id = "rules-btn" onclick = "ShowRules();">RULES</div>
+            </div>
+            <div id = "level"></div>
+            <div id = "rules-page">
+                <div id = "rules">
+                    <div id = "rules-heading">RULES</div>
+                    <div id = "rules-text">There will be some glasses (or test tubes to be exact xD), your task is to put the liquids with same color together! You can transfer different colored water from one glass to another only if the other glass is empty or its top most layer of water is of the same color as that of the one from which water is to be taken. The glass you have selected will be highlighted to prevent confusion. Restart button will take you back to the beginning of the level, also every time you open the same level the water will be shuffled. Check out the real game 'Water sort puzzle' on playstore, I have cloned it.</div>
+                    <div id = "back" onclick = "HideRules();">BACK</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

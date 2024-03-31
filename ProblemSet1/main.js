@@ -12,45 +12,79 @@ function typeWriter(text, i, fnCallback) {
 // 页面加载完毕时，开始打字效果
 window.onload = function() {
     document.getElementById("welcomeMessage").style.display = "block";
-    typeWriter("欢迎来到O₂Bar<br>这是一条招募广告<br>O₂Bar正在寻找像你一样的酒精艺术家<br>准备好成为下一个传奇调酒师了吗？", 0, function(){
+    typeWriter("这是一条招募广告<br>O₂Bar正在寻找像你一样的酒精艺术家<br>你愿意加入我们吗？", 0, function(){
         document.getElementById("startButton").style.display = "inline-block";
     });
 }
 
-// 点击开始按钮后显示输入框
+// 点击开始按钮后显示输入框并隐藏欢迎信息和开始按钮
 document.getElementById("startButton").addEventListener("click", function() {
     // 隐藏欢迎信息
     document.getElementById("welcomeMessage").style.display = "none";
+    // 隐藏开始按钮
+    this.style.display = "none"; // "this" 关键字在这里指代被点击的 startButton
     // 显示输入框
     document.getElementById("nameForm").style.display = "block";
 });
 
-// 提交名字后显示结果并更新为新对话框
-function submitName() {
-    var name = document.getElementById("nameInput").value;
-    if (name) {
-        document.getElementById("nameForm").style.display = "none";
-        var welcomeMessage = document.getElementById("welcomeMessage");
-        welcomeMessage.innerHTML = ""; // 清空当前的欢迎信息
-        typeWriter(`好的！${name}，但在正式成为Sannketu's Bar的调酒师之前，你需要先通过一个小考核`, 0, function() {
-            showReadyButton();
-        });
-    } else {
-        alert("请输入你的名字！");
-    }
-}
 
-// 显示“我准备好了！”按钮，点击后直接开始“Easy”难度的游戏
-function showReadyButton() {
-    var readyButton = document.createElement("button");
-    readyButton.textContent = "我准备好了！";
-    document.body.appendChild(readyButton);
-    readyButton.addEventListener('click', function() {
-        document.getElementById("welcomeMessage").style.display = "none";
-        this.remove(); // 删除“我准备好了！”按钮
-        startEasyGame(); // 直接开始“Easy”难度的游戏
-    });
-}
+// 处理名字提交
+        function submitName() {
+            var name = document.getElementById("nameInput").value.trim();
+            if (name) {
+                document.getElementById("nameForm").style.display = "none"; // 隐藏输入框
+                document.getElementById("welcomeMessage").style.display = "block"; // 确保欢迎信息可见
+                document.getElementById("welcomeMessage").innerHTML = ""; // 清空当前的欢迎信息
+                // 使用typeWriter函数展示定制化的信息
+                typeWriter(`好的！${name}，在正式成为 O₂Bar 的调酒师之前，你需要先通过一个小考核`, 0, function() {
+                    // 打字效果完成后显示开始游戏按钮
+                // showReadyButton();
+                document.getElementById("game").style.display = "block";
+                window.OpenLevel(3);
+                document.getElementById("very-hard").style.display = "inline-block"; // 显示开始游戏按钮
+        document.getElementById("rules-btn").style.display = "inline-block"; // 显示规则按钮
+                });
+            } else {
+                alert("请输入你的名字！");
+            }
+        }
+        // 显示“我准备好了！”按钮，点击后直接开始“Easy”难度的游戏
+        function showReadyButton() {
+            var readyButton = document.createElement("button");
+            readyButton.textContent = "我准备好了！";
+            document.body.appendChild(readyButton);
+            readyButton.addEventListener('click', function() {
+                this.style.display = "none"; // 删除“我准备好了！”按钮
+                // 显示“START”和“RULES”按钮
+        //         document.getElementById("game").style.display = "block";
+        //         window.OpenLevel(3);
+        //         document.getElementById("very-hard").style.display = "inline-block"; // 显示开始游戏按钮
+        // document.getElementById("rules-btn").style.display = "inline-block"; // 显示规则按钮
+            });
+        }
+
+// Enter键监听
+document.getElementById("nameInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter" || event.keyCode === 13) {
+        event.preventDefault(); // 阻止默认行为
+        submitName(); // 提交名字
+    }
+});
+
+
+
+// 假设所有游戏控制按钮都在一个ID为'game-controls'的容器内
+document.getElementById('game').addEventListener('click', function(event) {
+    var target = event.target; // 获取点击的目标元素
+
+    if (target.id === 'very-hard') {
+        // 如果点击的是"START"按钮
+        window.OpenLevel(3); // 调用开始游戏的函数
+    } else if (target.id === 'rules-btn') {
+        // 如果点击的是"RULES"按钮
+        ShowRules(); // 显示游戏规则
+    }
+});
 
 
 var game,level,color=["red","blue","yellow","green","purple","lightgreen","lightblue","orange","brown","pink"],water=[],w=[],currentLevel,clicked=[],transferring=false,t=false,size=1,sizechange=0.05,won=false,moves=0;
@@ -62,10 +96,10 @@ var testTubePosition = {
     7: [[-140,100],[-60,100],[20,100],[100,100],[-140,275],[-60,275],[20,275],[100,275],[-140,450],[-60,450],[20,450],[100,450]],
 }
 
-// window.onload = function() {
-//     game = document.getElementById("game");
-//     level = document.getElementById("level");
-// }
+window.get = function() {
+    game = document.getElementById("game");
+    level = document.getElementById("level");
+}
 
 window.OpenLevel = function(x) {
     moves = 0;

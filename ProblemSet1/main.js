@@ -15,7 +15,7 @@ window.onload = function() {
     level = document.getElementById("level");
     //欢迎语打字效果
     document.getElementById("welcomeMessage").style.display = "block";
-    typeWriter("这是一条招募广告<br>O₂Bar正在寻找像你一样的酒精艺术家<br>你愿意加入我们吗？", 0, function(){
+    typeWriter("这是一条招募广告<br>O₂Bar 正在寻找像你一样的酒精艺术家<br>你愿意加入我们吗？", 0, function(){
         document.getElementById("startButton").style.display = "inline-block";
     });
     //显示输入框
@@ -40,18 +40,19 @@ function submitName() {
         document.getElementById("nameForm").style.display = "none"; 
         document.getElementById("welcomeMessage").style.display = "block"; 
         document.getElementById("welcomeMessage").innerHTML = ""; 
+
         // 打字效果
         window.typeWriter(`好的！${name}，在正式成为 O₂Bar 的调酒师之前，你需要先通过一个小考核`, 0, function() {
-            // 显示开始游戏按钮
             document.getElementById("startGameButton").style.display = "inline-block";
         });
+        //显示开始按钮
         document.getElementById("startGameButton").addEventListener("click", function() {
-            // 隐藏欢迎信息
             document.getElementById("game").style.display = "block";
-            // 隐藏开始按钮
             this.style.display = "none"; 
+            document.getElementById("welcomeMessage").style.display = "none";
         });
-    } else {
+    } 
+    else {
         alert("请输入你的名字！");
     }
 }
@@ -60,15 +61,15 @@ function submitName() {
 document.getElementById('game').addEventListener('click', function(event) {
     var target = event.target; 
 
-    if (target.id === 'very-hard') {
-        window.OpenLevel(3); 
+    if (target.id === 'impossible') {
+        window.OpenLevel(7); 
     } else if (target.id === 'rules-btn') {
         ShowRules();
     }
 });
 
 
-var game,level,color=["#000080","#4169E1","#0476D0","#89CFF0","#FF99FF","#FF99CC","#FF9999","#FFCC99"],water=[],w=[],currentLevel,clicked=[],transferring=false,t=false,size=1,sizechange=0.05,won=false,moves=0;
+var game,level,color=["#99FFFF","#9999FF","#CC99FF","#99CCFF","#CCFF99","#FF99CC","#FF9999","#FFCC99","#FFFF8F","#FFFF8F","#FFCC66","#1F8FFF","#5CADFF"],water=[],w=[],currentLevel,clicked=[],transferring=false,t=false,size=1,sizechange=0.05,won=false,moves=0;
 var testTubePosition = {
     // 0: [[-110,130], [-20, 130], [70, 130], [-65,320], [15, 320]],
     // 1: [[-110,130], [-20, 130], [70, 130],[-110,320], [-20, 320], [70, 320]],

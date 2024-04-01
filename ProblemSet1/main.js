@@ -9,85 +9,66 @@ function typeWriter(text, i, fnCallback) {
     }
 }
 
-// 页面加载完毕时，开始打字效果
+
 window.onload = function() {
+    game = document.getElementById("game");
+    level = document.getElementById("level");
+    //欢迎语打字效果
     document.getElementById("welcomeMessage").style.display = "block";
     typeWriter("这是一条招募广告<br>O₂Bar正在寻找像你一样的酒精艺术家<br>你愿意加入我们吗？", 0, function(){
         document.getElementById("startButton").style.display = "inline-block";
     });
+    //显示输入框
+    document.getElementById("startButton").addEventListener("click", function() {
+        document.getElementById("welcomeMessage").style.display = "none";
+        this.style.display = "none"; 
+        document.getElementById("nameForm").style.display = "block";
+    });
+    //enter键监听
+    document.getElementById("nameInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); 
+            submitName(); 
+        }
+    });
 }
 
-// 点击开始按钮后显示输入框并隐藏欢迎信息和开始按钮
-document.getElementById("startButton").addEventListener("click", function() {
-    // 隐藏欢迎信息
-    document.getElementById("welcomeMessage").style.display = "none";
-    // 隐藏开始按钮
-    this.style.display = "none"; // "this" 关键字在这里指代被点击的 startButton
-    // 显示输入框
-    document.getElementById("nameForm").style.display = "block";
-});
 
-
-// 处理名字提交
-        function submitName() {
-            var name = document.getElementById("nameInput").value.trim();
-            if (name) {
-                document.getElementById("nameForm").style.display = "none"; // 隐藏输入框
-                document.getElementById("welcomeMessage").style.display = "block"; // 确保欢迎信息可见
-                document.getElementById("welcomeMessage").innerHTML = ""; // 清空当前的欢迎信息
-                // 使用typeWriter函数展示定制化的信息
-                typeWriter(`好的！${name}，在正式成为 O₂Bar 的调酒师之前，你需要先通过一个小考核`, 0, function() {
-                    // 打字效果完成后显示开始游戏按钮
-                // showReadyButton();
-                document.getElementById("game").style.display = "block";
-                window.OpenLevel(3);
-                document.getElementById("very-hard").style.display = "inline-block"; // 显示开始游戏按钮
-        document.getElementById("rules-btn").style.display = "inline-block"; // 显示规则按钮
-                });
-            } else {
-                alert("请输入你的名字！");
-            }
-        }
-        // 显示“我准备好了！”按钮，点击后直接开始“Easy”难度的游戏
-        function showReadyButton() {
-            var readyButton = document.createElement("button");
-            readyButton.textContent = "我准备好了！";
-            document.body.appendChild(readyButton);
-            readyButton.addEventListener('click', function() {
-                this.style.display = "none"; // 删除“我准备好了！”按钮
-                // 显示“START”和“RULES”按钮
-        //         document.getElementById("game").style.display = "block";
-        //         window.OpenLevel(3);
-        //         document.getElementById("very-hard").style.display = "inline-block"; // 显示开始游戏按钮
-        // document.getElementById("rules-btn").style.display = "inline-block"; // 显示规则按钮
-            });
-        }
-
-// Enter键监听
-document.getElementById("nameInput").addEventListener("keypress", function(event) {
-    if (event.key === "Enter" || event.keyCode === 13) {
-        event.preventDefault(); // 阻止默认行为
-        submitName(); // 提交名字
+function submitName() {
+    var name = document.getElementById("nameInput").value.trim();
+    if (name) {
+        document.getElementById("nameForm").style.display = "none"; 
+        document.getElementById("welcomeMessage").style.display = "block"; 
+        document.getElementById("welcomeMessage").innerHTML = ""; 
+        // 打字效果
+        window.typeWriter(`好的！${name}，在正式成为 O₂Bar 的调酒师之前，你需要先通过一个小考核`, 0, function() {
+            // 显示开始游戏按钮
+            document.getElementById("startGameButton").style.display = "inline-block";
+        });
+        document.getElementById("startGameButton").addEventListener("click", function() {
+            // 隐藏欢迎信息
+            document.getElementById("game").style.display = "block";
+            // 隐藏开始按钮
+            this.style.display = "none"; 
+        });
+    } else {
+        alert("请输入你的名字！");
     }
-});
+}
 
 
-
-// 假设所有游戏控制按钮都在一个ID为'game-controls'的容器内
 document.getElementById('game').addEventListener('click', function(event) {
-    var target = event.target; // 获取点击的目标元素
+    var target = event.target; 
 
     if (target.id === 'very-hard') {
-        // 如果点击的是"START"按钮
-        window.OpenLevel(3); // 调用开始游戏的函数
+        window.OpenLevel(3); 
     } else if (target.id === 'rules-btn') {
-        // 如果点击的是"RULES"按钮
-        ShowRules(); // 显示游戏规则
+        ShowRules();
     }
 });
 
 
-var game,level,color=["red","blue","yellow","green","purple","lightgreen","lightblue","orange","brown","pink"],water=[],w=[],currentLevel,clicked=[],transferring=false,t=false,size=1,sizechange=0.05,won=false,moves=0;
+var game,level,color=["#000080","#4169E1","#0476D0","#89CFF0","#FF99FF","#FF99CC","#FF9999","#FFCC99"],water=[],w=[],currentLevel,clicked=[],transferring=false,t=false,size=1,sizechange=0.05,won=false,moves=0;
 var testTubePosition = {
     // 0: [[-110,130], [-20, 130], [70, 130], [-65,320], [15, 320]],
     // 1: [[-110,130], [-20, 130], [70, 130],[-110,320], [-20, 320], [70, 320]],
@@ -96,10 +77,7 @@ var testTubePosition = {
     7: [[-140,100],[-60,100],[20,100],[100,100],[-140,275],[-60,275],[20,275],[100,275],[-140,450],[-60,450],[20,450],[100,450]],
 }
 
-window.get = function() {
-    game = document.getElementById("game");
-    level = document.getElementById("level");
-}
+
 
 window.OpenLevel = function(x) {
     moves = 0;
@@ -130,8 +108,8 @@ window.OpenLevel = function(x) {
 
 function ApplyInfo(a = water) {
     if (!won) {
-        let d=0,heading=["EASY","MEDIUM","HARD","VERY HARD","","","","IMPOSSIBLE"][currentLevel];
-        level.innerHTML = `<div id = 'lvl-heading'>${heading}</div>`;
+        let d=0,heading=["加油哦o(*￣▽￣*)ブ"][currentLevel];
+        level.innerHTML = `<div id = 'lvl-heading'>加油哦o(*￣▽￣*)ブ</div>`;
         for (let i of testTubePosition[currentLevel]) {
             level.innerHTML += `<div class = "test-tube" style="top:${i[1]}px;left:calc(50vw + ${i[0]}px);transform:rotate(0deg);" onclick="Clicked(${d});">
                 <div class="colors" style = "background-color:${a[d][0]};top:100px;"></div>
@@ -146,7 +124,6 @@ function ApplyInfo(a = water) {
 }
 
 window.Clicked = function(x) {
-    //console.log(x);
     if (!transferring) {
         if (clicked.length == 0) {
             clicked.push(x);
@@ -190,13 +167,6 @@ function TransferAnim(a,b) {
 }
 
 function Transfer(a,b) {
-    /*
-    a represents the index of the glass from which water is to ne taken
-    b represents the index of the glass to which water is to be transferred
-    constraints:
-    b should have white
-    last element of a = last non-white element in b
-    */
     if (!water[b].includes("transparent") || water[a] == ["transparent","transparent","transparent","transparent"]) {
         moves-=1;
         document.getElementById("moves").innerHTML = "Moves: "+moves;
@@ -328,3 +298,4 @@ window.HideRules = function() {
     },500);
     document.getElementById("rules-page").style.opacity = "0";
 }
+

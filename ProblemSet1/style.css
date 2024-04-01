@@ -15,14 +15,14 @@ body {
   flex-direction: column;
 }
 /* 标题容器样式 */
-       #title-container {
-           position: fixed;
-           top: 0;
-           left: 0;
-           width: 100%;
-           height: 60px;
-           background-color: black;
-       }
+    #title-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: black;
+    }
 
        /* 标题样式 */
        h1 {
@@ -36,16 +36,18 @@ body {
        #pink-block {
            height: 30px;
            background-color: #FF99CC;
+           background-color:#eb84bd;
        }
 
-       #homepage-container {
-          position: relative;
-          padding: 20px;
-          max-width: 600px;
-          box-sizing: border-box;
-          margin-top: 500px; /* 增加了比标题容器高度更多的外边距 */
-          color: white;
-        }
+/* 欢迎页容器样式 */
+    #homepage-container {
+        position: relative;
+        padding: 20px;
+        max-width: 600px;
+        box-sizing: border-box;
+        margin-top: 500px; /* 增加了比标题容器高度更多的外边距 */
+        color: white;
+    }
         img {
           margin-top: 100px;
           margin-bottom: 20px;
@@ -71,27 +73,34 @@ body {
          cursor: pointer;
        }
 
-       button {
-         background-color: #4CAF50;
-         color: white;
-         padding: 10px 20px;
-         font-size: 16px;
-         cursor: pointer;
-       }
 
-       #nameForm {
+       #nameForm{
          display: none;
          margin-top: 20px;
        }
 
 
+
+       #startGameButton {
+         display: none;
+         background-color: #FF99CC;
+         color: white;
+         border: none;
+         padding: 10px 20px;
+         font-size: 20px;
+         font-family: 'VonwaonBitmap', sans-serif;
+         cursor: pointer;
+       }
+
+/* 游戏页容器样式 */
 #game {
     position: absolute;
-    top: 600px;
+    top: 400px;
     left: 0;
     height: 100vh;
     width: 100vw;
     background-color: black;
+    display: none;
 }
 
 #homepage {
@@ -103,10 +112,9 @@ body {
     background-color:black;
     overflow-y:scroll;
     overflow-x: hidden;
-    /*display: none;*/
 }
 
-#homepage-heading {
+ #homepage-heading {
     position: relative;
     margin-top: 0;
     left: 0;
@@ -117,7 +125,7 @@ body {
     line-height: 50px;
     text-align: center;
     font-weight: 900;
-    font-color: #FF99CC;
+    color: #FF99CC;
 }
 
 .lvl {
@@ -127,7 +135,7 @@ body {
     width: calc(100vw - 20px);
     height: 80px;
     color: white;
-    background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background: linear-gradient(to right, #110a0e, #3c2a30, #9e789e, #dc98d2, #f9d4ff);
     text-align: center;
     font-size: 30px;
     font-weight: 600;
@@ -145,11 +153,11 @@ body {
     background-color: black;
     overflow-y: scroll;
     overflow-x: hidden;
-    display: none;
+    display: none; 
 }
 
 .lvl:hover {
-    background: linear-gradient(to left, #084094, #0061a4, #007887, #008856, #72902d);;
+    background: linear-gradient(to left, #110a0e, #3c2a30, #9e789e, #dc98d2, #f9d4ff);;
 }
 
 .test-tube {
@@ -222,7 +230,7 @@ body {
     font-weight: 600;
     text-align: center;
     line-height: 50px;
-    background-color: lightgreen;
+    background-color:rgb(253, 153, 208);
     border-radius: 10px 10px 0 0;
 }
 
@@ -232,7 +240,7 @@ body {
     left: 0;
     height: 50px;
     width: 100vw;
-    background-color: yellow;
+    background-color: #FF99CC;
     border-radius: 0 0 25px 25px;
     font-size: 40px;
     font-weight: 800;
@@ -256,7 +264,7 @@ body {
     top: calc(100vh - 50px);
     height: 50px;
     width: 200px;
-    background-color: lightgreen;
+    background-color: rgb(253, 153, 208);
     border-radius: 20px 20px 0 0;
     text-align: center;
     font-size: 25px;
@@ -281,7 +289,7 @@ body {
     position: absolute;
     top: 100px;
     left: 50px;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 400px);
     width: calc(100vw - 100px);
     background-color: white;
     border-radius: 10px;
@@ -314,11 +322,15 @@ body {
     height: 40px;
     width: 100px;
     left: calc(100% - 100px);
-    background-color: rgb(100, 255, 100);
+    background-color: rgb(253, 153, 208);
     font-size: 20px;
     line-height: 40px;
     text-align: center;
     border-radius: 10px 0 0 10px;
+}
+
+#alert-button:hover {
+    background-color: rgb(253, 153, 208);
 }
 
 #alert-button:hover {

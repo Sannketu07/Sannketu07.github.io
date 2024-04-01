@@ -299,3 +299,4 @@ window.HideRules = function() {
     document.getElementById("rules-page").style.opacity = "0";
 }
 
+

@@ -1,0 +1,552 @@
+ /* <uniquifier>: Use a unique and descriptive class name */
+
+     
+.quicksand-header {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+    
+
+*{
+       padding: 0;
+       margin: 0;
+       box-sizing:border-box;
+}
+body {
+       padding-top: 80px;
+       font-family: 'Quicksand', sans-serif;
+       font-weight: 700;
+       font-style: normal;  /* 根据导航栏实际高度调整 */
+}
+
+/* navbar */
+navbar{
+       background-color:white;
+}
+
+.nav-pills {
+       --bs-nav-pills-border-radius: var(--bs-border-radius);
+       --bs-nav-pills-link-active-color: #fff;
+       --bs-nav-pills-link-active-bg: cornflowerblue;
+}
+
+.nav-link{
+       color:cornflowerblue;
+       font-size:1rem;
+       font-weight:700;
+       cursor:pointer;
+       text-decoration: none;
+}
+
+.navbar-brand{
+       font-size:1.23rem;
+       font-weight: 800;
+       color:#000000;
+}
+
+/* --------------main section-------------- */
+.main{
+       background:url(img/bg.png)no-repeat;
+       background-size:cover;
+       width:100%;
+       height: 100vh;
+    }
+
+.main h3{
+       font-size:4.4rem;
+       font-weight: 700;  
+}
+
+.main h6{
+       font-size: 1.4rem;
+       text-transform: uppercase;
+       line-height:1;
+       border-bottom:3px solid cornflowerblue;
+       width:40%;
+}
+.main .bt1{
+       height: 55px;
+       width:138px;
+       background-color: cornflowerblue;
+       color:white;
+       outline:none;
+       border:none;
+       font-weight:bold;
+       border-radius:5px;
+}
+.main .bt2{
+       height: 55px;
+       width:138px;
+       background-color: transparent;
+       color:cornflowerblue;
+       outline:none;
+       border:1px solid cornflowerblue;
+       font-weight:bold;
+       border-radius:5px;
+}
+.main .bt2:hover{
+       background-color: cornflowerblue;
+       transition: 0.5s;
+       color:white;
+}
+
+/* --------------about section-------------- */
+.about img{
+       -webkit-box-shadow:6px 4px 41px -24px rgba(0,0,0,0.75);
+       -moz-box-shadow:6px 4px 41px -24px rgba(0,0,0,0.75);
+       box-shadow:6px 4px 41px -24px rgba(0,0,0,0.75);
+}
+h1{
+       font-size: 3rem;
+       font-weight: 900;
+}
+.progress{
+       background-color: rgb(234, 234, 234);
+       justify-content: flex-start;
+       border-radius: 50px;
+       align-items: center;
+       position: relative;
+       display: flex;
+       height: 25px;
+       width: 100%;
+
+       -webkit-box-shadow:inset 23px 40px 97px -159px rgba(0,0,0,0.75);
+       -moz-box-shadow:inset 23px 40px 97px -159px rgba(0,0,0,0.75);
+       box-shadow:inset 23px 40px 97px -159px rgba(0,0,0,0.75);
+}
+.pro-value1{
+       animation:load1 3s normal forwards;
+       border-radius: 50px;
+       background-color: rgb(194, 215, 255);
+       height: 25px;
+       width: 0;
+}
+.pro-value2{
+       animation:load2 3s normal forwards;
+       border-radius: 50px;
+       background-color: rgb(182, 208, 255);
+       height: 25px;
+       width: 0;
+}
+.pro-value3{
+       animation:load3 3s normal forwards;
+       border-radius: 50px;
+       background-color: rgb(147, 185, 255);
+       height: 25px;
+       width: 0;
+}
+.pro-value4{
+       animation:load4 3s normal forwards;
+       border-radius: 50px;
+       background-color: rgb(117, 165, 255);
+       height: 25px;
+       width: 0;
+}
+.pro-value5{
+       animation:load5 3s normal forwards;
+       border-radius: 50px;
+       background-color: rgb(102, 156, 255);
+       height: 25px;
+       width: 0;
+}
+
+.progress p{
+       color:white;
+       padding: 6px;
+}
+   
+@keyframes load1{
+       0%{
+           width: 0;
+       }
+       100%{
+           width:95%;
+       }
+}
+@keyframes load2{
+       0%{
+           width: 0;
+       }
+       100%{
+           width:70%;
+       }
+}
+@keyframes load3{
+       0%{
+           width: 0;
+       }
+       100%{
+           width:98%;
+       }
+}
+@keyframes load4{
+       0%{
+           width: 0;
+       }
+       100%{
+           width:65%;
+       }
+}
+@keyframes load5{
+       0%{
+           width: 0;
+       }
+       100%{
+           width:85%;
+       }
+}
+
+.btn1{
+       height: 40px;
+       width: 145px;
+       outline: none;
+       border: none;
+       background-color: cornflowerblue;
+       color: white;
+       border-radius: 4px;
+}
+.btn1:hover{
+       background-color: transparent;
+       color: cornflowerblue;
+       border: 1px solid cornflowerblue;
+       transition: 0.5s;
+}
+.btn2{
+       height: 40px;
+       width: 145px;
+       outline: none;
+       border: 1px solid cornflowerblue;
+       background-color: transparent;
+       color: cornflowerblue;
+       border-radius: 4px;
+}
+.btn2:hover{
+       background-color: cornflowerblue;
+       color: white;
+       border: none;
+       transition: 0.5s;
+}
+
+/* --------------skills section-------------- */
+.card{
+       border: none;
+       outline: none;
+       -webkit-box-shadow:-8px 6px 89px -65px rgba(0,0,0,0.75);
+       -moz-box-shadow:-8px 6px 89px -65px rgba(0,0,0,0.75);
+       box-shadow:-8px 6px 89px -65px rgba(0,0,0,0.75);
+}
+.card p{
+       color:gray;
+}
+.circle{
+       height: 70px;
+       width: 70px;
+       background-color: rgb(255, 255, 255);
+       color: cornflowerblue;
+       padding: 12px;
+       font-size: 30px;
+       border-radius: 50%;
+       display: inline-block;
+       margin-bottom: 20px;
+}
+.card:hover .circle{
+       background-color: cornflowerblue;
+       color: white;
+       transition: 0.5s;
+}
+
+/* --------------portfolio section-------------- */
+.accordion-item {
+       background-color:transparent; /* 浅灰色背景 */
+       border: none; /* 灰色边框 */
+   }
+   
+   .accordion-body {
+       background-color: transparent; /* 白色背景 */
+   }
+   .accordion-header {
+       padding: 0.5rem 1rem; /* 增加标题的内边距 */
+   }
+   
+   .accordion-body {
+       padding: 1rem; /* 增加内容区的内边距 */
+   }
+   .accordion-collapse {
+       transition: height 0.35s ease; /* 高度变化的过渡动画 */
+   }
+   .accordion-button {
+       font-size: 1.25rem; /* 增加标题字体大小 */
+       color: #000000; /* 蓝色字体 */
+   }
+   
+   .accordion-body {
+       color: #333333; /* 深灰色字体 */
+   }
+   
+ /* 修改轮播控制按钮的颜色 */
+.carousel-control-prev, .carousel-control-next {
+       color: rgb(135, 195, 254); /* 设置按钮颜色为蓝色 */
+   }
+   
+   /* 修改轮播控制按钮激活状态下的颜色 */
+   .carousel-control-prev:hover, .carousel-control-next:hover {
+       color: rgb(55, 133, 250); /* 设置激活状态下按钮颜色为深蓝色 */
+   }
+        
+
+
+.item{
+       position: relative;
+       height: 300px;       
+}
+#graphicCollapse .item{
+       height: 360px;      
+}
+ .item img {
+       width: 100%; /* 使图像充满整个父元素 */
+       height: 100%; /* 使图像充满整个父元素 */
+       object-fit: cover; /* 调整图像以填充整个父元素 */
+   } 
+.item:hover{
+       -webkit-box-shadow:-18px 3px 109px -65px rgba(0,0,0,0.75);
+       -moz-box-shadow:-18px 3px 109px -65px rgba(0,0,0,0.75);
+       box-shadow:-18px 3px 109px -65px rgba(0,0,0,0.75);
+       transition:0.5s;    
+}
+.item span{
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       font-size: 40px;
+       color: black;
+       cursor: pointer;
+       opacity: 0;
+}
+.item:hover span{
+       opacity: 1;
+       transition: 0.5s;
+}
+.item:before{
+       content: "";
+       left: 0;
+       top: 0;
+       height: 100%;
+       width: 100%;
+       background-color: rgb(255, 248, 248);
+       opacity: 0;
+       position: absolute;
+}
+.item:hover:before{
+       opacity: 1;
+       transition: 0.3s;
+}
+.modal-dialog img {
+       margin-bottom: 20px; /* 设置图片之间的垂直间距 */
+   }
+.modal-body img {
+       margin-bottom: 15px; /* 调整这个值来改变图片之间的间距 */
+   }
+
+   
+/* --------------contact section-------------- */
+.circle:hover{
+       background-color: cornflowerblue;
+       transition: 0.5s;
+       color: white;
+}
+.contact .btn3{
+       background-color: cornflowerblue;
+       color: white;
+       outline: none;
+       border: none;
+       height: 40px;
+       width: 140px;
+       border-radius: 4px;
+}
+.btn3:hover{
+       background-color: transparent;
+       color: black;
+       transition: 0.5s;
+       border: 1px solid cornflowerblue;
+}
+h5{
+       font-size: 1.5rem;
+       font-weight: 700;
+}
+
+/* --------------qualification section-------------- */
+/* .left-arrow{
+       position: absolute;
+       height: 0;
+       width: 0;
+       top: 28px;
+       z-index: 1;
+       border-top: 15px solid transparent;
+       border-bottom: 15px solid transparent;
+       border-left: 1px solid white;
+       right: -14px;
+}
+.right-arrow{
+       position: absolute;
+       height: 0;
+       width: 0;
+       top: 28px;
+       z-index: 1;
+       border-top: 15px solid transparent;
+       border-bottom: 15px solid transparent;
+       border-left: 1px solid white;
+       left: -14px;
+}
+.leftBox{
+       left: -17%;
+}
+.rightBox{
+       left:19%
+}
+.card img {
+       position: absolute;
+       border-radius: 50%;
+       right: -77px;
+       top: 32px;
+       z-index: 10;
+   }
+   
+.rightBox img{
+       left: -77px;
+}
+
+.whiteLine {
+       position: relative;  /* 确保白线的父容器是相对定位 
+   }
+   
+   .whiteLine::after {
+       content: '';
+       position: absolute;
+       width: 6px;
+       height: 120%;
+       background: rgb(221, 230, 255);
+       top: 42px;
+       left: 50%;
+       margin-left: 9px;
+       transform: translateX(-50%); 
+       z-index: -1; 
+   } */
+
+/* @keyframes line{
+       0%{height: 0;}
+       100%{height: 120%}
+}
+.card{
+       animation: line 1s linear forwards;
+       opacity: 0;
+}
+@keyframes line{
+       0%{opacity: 1;
+       transform: translateY(10px);}
+       100%{opacity: 1;
+              transform: translateY(0px);}
+} */
+/* 
+.timeline{
+       margin: 5em auto;
+       max-width: 34.15em;
+}
+.checkpoint{
+       max-width: 34em;
+       padding-top: 2em;
+       padding-bottom: 2em;
+       position: relative;
+}
+.checkpoint div{
+       border: 2px solid #888;
+       border-radius: 1em;
+       padding: 1.5em;
+}
+.checkpoint p{
+       line-height: 27px;
+       color: #ccc;
+}
+.checkpoint:nth-child(odd){
+       border-left: 3px solid #888;
+       padding-left: 3em;
+       transform: translateX(17em);
+}
+.checkpoint:nth-child(even){
+       border-right: 3px solid #888;
+       padding-right: 3em;
+       transform: translateX(-17em);
+}
+.checkpoint:nth-child(odd)::before,
+.checkpoint:nth-child(even)::before {
+       content:'';
+       background: #888;
+       width: 3em;
+       height: 3px;
+       position: absolute;
+       top:50%;
+       transform:translateY(-50%);
+}
+.checkpoint:nth-child(odd)::before{
+       left: 0;
+}
+.checkpoint:nth-child(even)::before{
+       right: 0;
+}
+.checkpoint:nth-child(odd) div::before,
+.checkpoint:nth-child(even) div::before{
+       content:'';
+       background: #fff;
+       box-shadow:0 0 0.5em #0d71fc;
+       width: 0.8em;
+       height: 0.8em;
+       position: absolute;
+       top:50%;
+       transform:translateY(-50%);
+       border-radius:50%;
+}
+.checkpoint:nth-child(odd) div::before {
+       left:-0.5em;
+}
+.checkpoint:nth-child(even) div::before:{
+       right: 0.5em;
+} */
+footer{
+       background-color: cornflowerblue;
+       color: lightgray;
+}
+.social-links {
+       display: flex; /* 声明这是一个 flex 容器 */
+       justify-content: center; /* 水平居中所有子项 */
+       align-items: center; /* 垂直居中所有子项 */
+   }
+.social-links a {
+       color: #fff;
+       width: 5rem;
+       height: 5rem;
+       flex-direction: column;
+       justify-content: center;
+       margin: 1.6rem;
+       font-size: 3rem;
+       transition: all .2s ease-in;
+       display: flex;
+   }
+   a, a:link, a:hover, a:visited, a:active {
+       text-decoration: none;
+   }
+   .qualification.p, a {
+       font-family: Montserrat, sans-serif;
+       font-size: 1.6rem;
+   }
+   a {
+       color: var(--bs-link-color);
+       text-decoration: underline;
+   }
+
+.btn-primary{
+       background-color: cornflowerblue;
+}
+

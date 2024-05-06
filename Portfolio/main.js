@@ -1,25 +1,73 @@
-//¼òÀúÏÂÔØ
+//ç®€å†ä¸‹è½½
 function downloadCV() {
     window.location.href = 'file/CV.pdf';
   }
+
+
+  document.querySelector('.backtotop').addEventListener('click', function(e) {
+    e.preventDefault(); // é˜»æ­¢é»˜è®¤çš„é”šç‚¹ç‚¹å‡»è¡Œä¸º
+    window.scrollTo({top: 0, behavior: 'smooth'}); // å¹³æ»‘æ»šåŠ¨åˆ°é¡µé¢é¡¶éƒ¨
+});
+
+
+
+    ////æ‹–åŠ¨æ•ˆæœ
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+    
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.className);
+    }
+    
+    
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        
+        // æ ¹æ®æ‹–åŠ¨å…ƒç´ çš„ç±»åæ»šåŠ¨åˆ°ä¸åŒçš„ section
+        switch(data) {
+            case "draggable graphic":
+                document.getElementById('Graphic').scrollIntoView({ behavior: 'smooth' });
+                break;
+            case "draggable photo":
+                document.getElementById('Photo').scrollIntoView({ behavior: 'smooth' });
+                break;
+            case "draggable project":
+                document.getElementById('Project').scrollIntoView({ behavior: 'smooth' });
+                break;
+            default:
+                console.error("Invalid draggable class");
+        }
+    }
   
-//´ò×ÖĞ§¹ûfunction setupTypingAnimation(element) {
+//æ‰“å­—æ•ˆæœfunction setupTypingAnimation(element) {
 document.addEventListener('DOMContentLoaded', function() {
     new Typed('#typing1 span', {
-      strings: ['Welcome to my Page'],
+      strings: ['while (computing meets creativity) {'],
       typeSpeed: 50,
-      backSpeed: 25,
+      backSpeed: 10,
       loop: true,
       cursorChar: '|'
     });
   
-    // new Typed('#typing2 span', {
-    //   strings: ['Second message'],
-    //   typeSpeed: 60,
-    //   backSpeed: 30,
-    //   loop: true,
-    //   cursorChar: '|'
-    // });
+    new Typed('#typing2 span', {
+        strings: [
+            'let&nbsp;ran&nbsp;=&nbsp;{<br>' +
+            '&nbsp;&nbsp;&nbsp;&nbsp;degrees:&nbsp;["Computer&nbsp;Science",&nbsp;<br>' +
+            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Advertising"],<br>' +
+            '&nbsp;&nbsp;&nbsp;&nbsp;skills:&nbsp;["Web&nbsp;Design",<br>' +
+            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Data&nbsp;Analysis",<br>' +
+            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Creative&nbsp;Campaigns",<br>' +
+            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Market&nbsp;Strategy"],<br>' +
+            '}'
+        ],
+        typeSpeed: 20,
+        backSpeed: 0,
+        loop: false,
+        cursorChar: '|'
+    });
+    
   
     // new Typed('#typing3 span', {
     //   strings: ['Third message'],
@@ -29,30 +77,24 @@ document.addEventListener('DOMContentLoaded', function() {
     //   cursorChar: '|'
     // });
   });
-  
+
+//æ»šåŠ¨æ•ˆæœ
   function scrollToContact() {
-    // Ê¹ÓÃ JavaScript ÖĞµÄ scrollTo ·½·¨½«Ò³Ãæ¹ö¶¯µ½Ö¸¶¨µÄÁªÏµ²¿·Ö
     document.getElementById('Contact').scrollIntoView({ behavior: 'smooth' });
 }
 function scrollToPortfolio() {
-    // Ê¹ÓÃ JavaScript ÖĞµÄ scrollTo ·½·¨½«Ò³Ãæ¹ö¶¯µ½Ö¸¶¨µÄÁªÏµ²¿·Ö
     document.getElementById('Portfolio').scrollIntoView({ behavior: 'smooth' });
 }
 
-//portfolioÖĞgraphicµÄmodal³ÊÏÖ
+//portfolioä¸­graphicçš„modalå‘ˆç°
 document.addEventListener('DOMContentLoaded', function () {
-    // »ñÈ¡ËùÓĞ¾ßÓĞ"data-target-img"ÊôĞÔµÄÍ¼±ê
     const icons = document.querySelectorAll('.fas.fa-plus[data-target-img]');
 
-    // ÎªÕâĞ©Í¼±êÌí¼Óµã»÷ÊÂ¼ş¼àÌıÆ÷
     icons.forEach(function (icon) {
         icon.addEventListener('click', function () {
-            // »ñÈ¡Ä¿±êÍ¼Æ¬µÄÂ·¾¶
             const targetSrc = this.getAttribute('data-target-img');
             const modal = document.getElementById('graphicmodal');
             const modalImage = modal.querySelector('img');
-
-            // ¸üĞÂÄ£Ì¬¿òÖĞµÄÍ¼Æ¬Ô´
             modalImage.src = targetSrc;
         });
     });
@@ -61,20 +103,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//portfolioÖĞphotoµÄmodal³ÊÏÖ
+//portfolioä¸­photoçš„modalå‘ˆç°
 document.addEventListener('DOMContentLoaded', function() {
-    // »ñÈ¡ËùÓĞÓĞ 'data-gallery' ÊôĞÔµÄÏî
     const items = document.querySelectorAll('.item[data-gallery]');
 
-    // ÎªÃ¿¸öÏîÌí¼Óµã»÷ÊÂ¼ş¼àÌıÆ÷
     items.forEach(item => {
         item.addEventListener('click', function() {
             const galleryNumber = this.getAttribute('data-gallery');
-            const imageCount = this.getAttribute('data-count');  // »ñÈ¡Ã¿¸ö¼¯ºÏµÄÍ¼Æ¬ÊıÁ¿
+            const imageCount = this.getAttribute('data-count'); 
             const modalContent = document.getElementById('photomodalImages');
-            modalContent.innerHTML = ''; // Çå¿ÕÄ£Ì¬¿òÖĞµÄÄÚÈİ
-
-            // ¸ù¾İ»ñÈ¡µÄÍ¼Æ¬ÊıÁ¿¶¯Ì¬´´½¨²¢Ìí¼ÓÍ¼Æ¬
+            modalContent.innerHTML = ''; 
             for (let i = 1; i <= imageCount; i++) {
                 const imgPath = `img/photo/${galleryNumber}/${i}.JPG`.replace('\\', '/');
                 const imgElement = document.createElement('img');

@@ -238,16 +238,16 @@ function calculateFinalScores() {
     // 根据最高分的城市跳转到相应的页面
     switch (maxCity) {
         case 'beijing':
-            window.location.href = 'beijing.html';
+            window.location.href = '../result/beijing.html';
             break;
         case 'xiamen':
-            window.location.href = 'xiamen.html';
+            window.location.href = '../result/xiamen.html';
             break;
         case 'lasa':
-            window.location.href = 'lasa.html';
+            window.location.href = '../result/lasa.html';
             break;
         case 'kunming':
-            window.location.href = 'kunming.html';
+            window.location.href = '../result/kunming.html';
             break;
     }
 }

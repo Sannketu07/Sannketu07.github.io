@@ -159,10 +159,7 @@ function calculateFinalScores() {
         case '麻油':
             scores['kunming'] += 25;
             break;
-        default:
-            // 默认显示油碟背景，按照题目描述，默认加25分给拉萨
-            scores['lasa'] += 25;
-            break;
+       
     }
 
     // 根据人物对话气泡的点击记录计算分数

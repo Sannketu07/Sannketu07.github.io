@@ -1,4 +1,3 @@
-
 // JavaScript Document
 
 let scores = {
@@ -239,16 +238,16 @@ function calculateFinalScores() {
     // 根据最高分的城市跳转到相应的页面
     switch (maxCity) {
         case 'beijing':
-            window.location.href = '../result/beijing.html';
+            window.location.href = 'beijing.html';
             break;
         case 'xiamen':
-            window.location.href = '../result/xiamen.html';
+            window.location.href = 'xiamen.html';
             break;
         case 'lasa':
-            window.location.href = '../result/lasa.html';
+            window.location.href = 'lasa.html';
             break;
         case 'kunming':
-            window.location.href = '../result/kunming.html';
+            window.location.href = 'kunming.html';
             break;
     }
 }
@@ -327,14 +326,4 @@ function switchContent(main, nmains) {
       });
     });
 
-
-    function saveNameAndRedirect(event) {
-    event.preventDefault();  // 阻止默认提交行为
-
-    const userName = document.getElementById('userInput').value;
-    localStorage.setItem('userName', userName);  // 将用户名保存到localStorage
-
-    calculateFinalScores();  // 调用得分计算和页面跳转函数
-    return false;  // 防止表单默认提交
-}
 

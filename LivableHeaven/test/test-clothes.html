@@ -1,0 +1,588 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="Whole-container">
+		<div class="logo-nav-bar">
+			<div class="logo-nav">
+				<img src="img/全黑logo.png" alt="自己设计的" width="70">
+			</div>
+		</div>
+	    <div class="Container1">
+			
+			
+<!--clothes-->
+			<div class="expanded section" id="main-clothes">
+				<div id="clothes-children" class="">
+					<div class="line" style="background-color: #70BA73; width: 370px;"></div>
+					<h1>今天打扮成什么样出门呢？</h1>
+					<div class="hidden" id="green">
+						<img src="img/选择绿头发.png" alt="green hair" width="230" height="380">
+						<p id="green-text">选择了很有生命力的穿搭呢！<br>蝴蝶是被花香吸引来的吧？</p>
+					</div>
+					<div class="hidden" id="black">
+						<img src="img/选择黑头发.png" alt="black hair" width="230" height="380">
+						<p id="black-text">干练又不失时尚感！</p>
+					</div>
+					<div class="hidden" id="pink">
+						<img src="img/选择粉头发.png" alt="pink hair" width="230" height="380">
+						<p id="pink-text">充满夏日气息的搭配！<br>活泼又清新</p>
+					</div>
+					<div class="hidden" id="red">
+						<img src="img/选择红头发.png" alt="red hair" width="230" height="380">
+						<p id="red-text">艺术感十足的红发和凉拖的<br>搭配，独一份的chill！</p>
+					</div>
+					<img src="img/绿.png" alt="green" width="330" height="330" id="绿" 
+						 onclick="showOnlyOne('green', ['black', 'pink', 'red']); handleClothesClick('绿', 'kunming')">
+					<img src="img/黑.png" alt="green" width="330" height="330" id="黑"
+						 onclick="showOnlyOne('black', ['green', 'pink', 'red']); handleClothesClick('黑', 'beijing')">
+					<img src="img/粉.png" alt="green" width="330" height="330" id="粉"
+						 onclick="showOnlyOne('pink', ['black', 'green', 'red']); handleClothesClick('粉', 'xiamen')">
+					<img src="img/红.png" alt="green" width="330" height="330" id="红"
+						 onclick="showOnlyOne('red', ['black', 'pink', 'green']); handleClothesClick('红', 'lasa')">
+				</div>
+				<div class="next" onclick=" if (lastClothesClick === null) {alert('请先选择一个喜欢的人物形象吧！'); return;}; switchContent('transport', ['main-clothes', 'food', 'people']); handleClothesAndTransport();">
+					<p class="arrow">→</p>
+				</div>
+				<div class="hidden icon-container icon-completed">
+					<img src="img/clothes.png" alt="people icon" width="20" height="20">
+				</div>
+		    </div>
+			
+
+<!--transport-->
+		    <div class="collapsed section" id="transport">
+				<div id="transport-children" class="hidden">
+					<div class="line" style="background-color: #80CAFF; width: 440px;"></div>
+					<h1>选择什么出行方式去火锅店呢？</h1>
+					<img src="img/绿.png" alt="" width="300" class="street hidden" id="greens">
+					<img src="img/黑.png" alt="" width="300" class="street hidden" id="blacks">
+					<img src="img/粉.png" alt="" width="300" class="street hidden" id="pinks">
+					<img src="img/红.png" alt="" width="300" class="street hidden" id="reds">
+					<div class="hidden" id="地铁">
+						<img src="img/choose-t.png" alt="bg" width="150" height="128">
+						<p>地铁</p>
+					</div>
+					<div class="hidden" id="机动车">
+						<img src="img/choose-t.png" alt="bg" width="150" height="128">
+						<p>机动车</p>
+					</div>
+					<div class="hidden" id="自行车">
+						<img src="img/choose-t.png" alt="bg" width="150" height="128">
+						<p>自行车</p>
+					</div>
+					<div class="hidden" id="步行">
+						<img src="img/choose-t.png" alt="bg" width="150" height="128">
+						<p>步行</p>
+					</div>
+					<img src="img/subway.png" alt="subway" width="105" height="120" id="subway"
+						 onclick="showOnlyOne('地铁', ['机动车', '自行车', '步行']); handleTransportClick('subway', 'beijing')">
+					<img src="img/car.png" alt="car" width="125" height="110" id="car"
+						 onclick="showOnlyOne('机动车', ['地铁', '自行车', '步行']); handleTransportClick('car', 'lasa')">
+					<img src="img/bicycle.png" alt="bicycle" width="152" height="90" id="bicycle"
+						 onclick="showOnlyOne('自行车', ['机动车', '地铁', '步行']); handleTransportClick('bicycle', 'xiamen')">
+					<img src="img/walk.png" alt="walk" width="70" height="115" id="walk"
+						 onclick="showOnlyOne('步行', ['机动车', '自行车', '地铁']); handleTransportClick('walk', 'kunming')">
+				</div>
+				<div class="icon-container" id="ict">
+					<svg width="20" height="25" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M21.875 4.6875V17.1875C21.875 19.7175 18.866 21.875 15.5263 21.875L18.6015 24.3028C18.8918 24.5321 18.7286 25 18.3594 25H3.51562C3.14561 25 2.98379 24.5315 3.27358 24.3028L6.34873 21.875C3.01855 21.875 0 19.7243 0 17.1875V4.6875C0 2.09868 3.125 0 6.25 0H15.625C18.7988 0 21.875 2.09868 21.875 4.6875ZM19.5312 11.3281V5.85938C19.5312 5.21216 19.0066 4.6875 18.3594 4.6875H3.51562C2.86841 4.6875 2.34375 5.21216 2.34375 5.85938V11.3281C2.34375 11.9753 2.86841 12.5 3.51562 12.5H18.3594C19.0066 12.5 19.5312 11.9753 19.5312 11.3281ZM10.9375 14.4531C9.42734 14.4531 8.20312 15.6773 8.20312 17.1875C8.20312 18.6977 9.42734 19.9219 10.9375 19.9219C12.4477 19.9219 13.6719 18.6977 13.6719 17.1875C13.6719 15.6773 12.4477 14.4531 10.9375 14.4531Z" fill="#2365C8"/>
+					</svg>
+				</div>
+				<div class="hidden next" onclick="if (lastTransportClick === null) {alert('请先选择一种交通工具吧！'); return; }; switchContent('food', ['main-clothes', 'transport', 'people']); changeDivContent('ict');">
+					<p class="arrow">→</p>
+				</div>
+		    </div>
+			
+
+<!--food-->
+			<div class="collapsed section" id="food">
+				<div id="food-children" class="hidden">
+					<div class="line" style="background-color: #FFEAB4; width: 440px;"></div>
+					<h1>到火锅店了！调个什么蘸料呢？</h1>
+					<p style="position: absolute; top: 10.5%; left: 10%">请谨慎选择哦~食材放进碗里就拿不出来啦！</p>
+					<img id="majiang" class="hidden" src="img/choose-f.png" alt="" width="105" height="96" style="position: absolute; bottom: 39%; left: 16%">
+					<div id="麻酱" style="position: absolute; bottom: 32%; left: 15%; cursor: pointer" onClick="showBG('majiang'); handleFoodClick('麻酱')">
+						<img src="img/麻酱.png" alt="" width="130" height="129">
+						<p style="margin: 0; color: #B59523; font-size: 20px"><strong>麻酱</strong></p>
+					</div>
+					<img id="conghua" class="hidden" src="img/choose-f.png" alt="" width="105" height="96" style="position: absolute; top: 28%; left: 4%">
+					<div id="葱花" style="position: absolute; top: 25%; left: 3%; cursor: pointer" onClick="showBG('conghua'); handleFoodClick('葱花')">
+						<img src="img/葱花.png" alt="" width="130" height="129">
+						<p style="margin: 0; color: #B59523; font-size: 20px"><strong>葱花</strong></p>
+					</div>
+					<img id="xiaomila" class="hidden" src="img/choose-f.png" alt="" width="105" height="96" style="position: absolute; top: 24%; left: 23%">
+					<div id="小米辣" style="position: absolute; top: 20%; left: 22%; cursor: pointer" onClick="showBG('xiaomila'); handleFoodClick('小米辣')">
+						<img src="img/小米辣.png" alt="" width="130" height="129">
+						<p style="margin: 0; color: #B59523; font-size: 20px"><strong>小米辣</strong></p>
+					</div>
+					<img id="haoyou" class="hidden" src="img/choose-f.png" alt="" width="105" height="96" style="position: absolute; bottom: 42%; left: 36%">
+					<div id="蚝油" style="position: absolute; bottom: 37%; left: 35%; cursor: pointer" onClick="showBG('haoyou');  handleFoodClick('蚝油')">
+						<img src="img/蚝油.png" alt="" width="130" height="129">
+						<p style="margin: 0; color: #B59523; font-size: 20px"><strong>蚝油</strong></p>
+					</div>
+					<img id="huashengsui" class="hidden" src="img/choose-f.png" alt="" width="105" height="96" style="position: absolute; top: 20%; left: 45%">
+					<div id="花生碎" style="position: absolute; top: 17%; left: 44%; cursor: pointer" onClick="showBG('huashengsui'); handleFoodClick('花生碎')">
+						<img src="img/花生碎.png" alt="" width="130" height="129">
+						<p style="margin: 0; color: #B59523; font-size: 20px"><strong>花生碎</strong></p>
+					</div>
+					<img id="mayou" class="hidden" src="img/choose-f.png" alt="" width="105" height="96" style="position: absolute; bottom: 43%; right: 31%">
+					<div id="麻油" style="position: absolute; bottom: 37%; right: 30%; cursor: pointer" onClick="showBG('mayou'); handleFoodClick('麻油')">
+						<img src="img/麻油.png" alt="" width="130" height="129">
+						<p style="margin: 0; color: #B59523; font-size: 20px"><strong>麻油</strong></p>
+					</div>
+					<img id="xiangcai" class="hidden" src="img/choose-f.png" alt="" width="105" height="96" style="position: absolute; top: 23%; right: 23%">
+					<div id="香菜" style="position: absolute; top: 20%; right: 22%; cursor: pointer" onClick="showBG('xiangcai'); handleFoodClick('香菜')">
+						<img src="img/香菜.png" alt="" width="130" height="129">
+						<p style="margin: 0; color: #B59523; font-size: 20px"><strong>香菜</strong></p>
+					</div>
+					<img id="lajiaofen" class="hidden" src="img/choose-f.png" alt="" width="105" height="96" style="position: absolute; bottom: 37%; right: 13%">
+					<div id="辣椒粉" style="position: absolute; bottom: 32%; right: 11%; cursor: pointer" onClick="showBG('lajiaofen'); handleFoodClick('辣椒粉')">
+						<img src="img/辣椒粉.png" alt="" width="130" height="129">
+						<p style="margin: 0; color: #B59523; font-size: 20px"><strong>辣椒粉</strong></p>
+					</div>
+					<img id="suanrong" class="hidden" src="img/choose-f.png" alt="" width="105" height="96" style="position: absolute; top: 28%; right: 5%">
+					<div id="蒜蓉" style="position: absolute; top: 25%; right: 4%; cursor: pointer" onClick="showBG('suanrong'); handleFoodClick('蒜蓉')">
+						<img src="img/蒜蓉.png" alt="" width="130" height="129">
+						<p style="margin: 0; color: #B59523; font-size: 20px"><strong>蒜蓉</strong></p>
+					</div>
+					<img id="bbg" src="img/bottom-bg.png" alt="" width="600" height="140" style="position: absolute; bottom: 5%; left: 20%">
+					<button id="done" onclick="if (selectedFoods.length === 0) {
+											   alert('请先选择至少一个小料哦~'); return;
+											   }; handleFinalChoice(); document.getElementById('bbg').classList.add('hidden'); document.getElementById('done').classList.add('hidden'); completeOperation()">选好了</button>
+					<!-- 食物对应的背景盘子 -->
+					<div id="麻酱碟" class="plate hidden" style="position: absolute; bottom: 0%; left: 28%">
+						<img src="img/麻酱碟.png" alt="麻酱碟" height="250">
+					</div>
+					<div id="海鲜酱碟" class="plate hidden" style="position: absolute; bottom: 0%; left: 28%">
+						<img src="img/海鲜酱碟.png" alt="海鲜酱碟" height="250">
+					</div>
+					<div id="油碟" class="plate hidden" style="position: absolute; bottom: 0%; left: 28%">
+						<img src="img/油碟.png" alt="油碟" height="250">
+					</div>
+				</div>
+				<div class="icon-container" id="icf">
+					<svg width="19" height="25" viewBox="0 0 21 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10.1514 0.742257C10.1904 0.971749 10.9375 5.35652 10.9375 7.03132C10.9375 9.58503 9.58008 11.4063 7.57324 12.1387L8.20312 23.7647C8.2373 24.4337 7.70508 25.0001 7.03125 25.0001H3.90625C3.2373 25.0001 2.7002 24.4385 2.73438 23.7647L3.36426 12.1387C1.35254 11.4063 0 9.58015 0 7.03132C0 5.35163 0.74707 0.971749 0.786133 0.742257C0.942383 -0.248954 2.99805 -0.263602 3.125 0.795968V7.6905C3.18848 7.85652 3.8623 7.84675 3.90625 7.6905C3.97461 6.45515 4.29199 0.893624 4.29688 0.766671C4.45801 -0.248954 6.47949 -0.248954 6.63574 0.766671C6.64551 0.898507 6.95801 6.45515 7.02637 7.6905C7.07031 7.84675 7.74902 7.85652 7.80762 7.6905V0.795968C7.93457 -0.258719 9.99512 -0.248954 10.1514 0.742257ZM15.9717 14.6925L15.2393 23.7305C15.1807 24.4141 15.7227 25.0001 16.4062 25.0001H19.1406C19.79 25.0001 20.3125 24.4776 20.3125 23.8282V1.17194C20.3125 0.527413 19.79 6.97878e-05 19.1406 6.97878e-05C15.1123 6.97878e-05 8.33008 8.71589 15.9717 14.6925Z" fill="#F2BD00"/>
+					</svg>
+				</div>
+				<div class="hidden next" onclick="validateAndProceed();">
+					<p class="arrow">→</p>
+				</div>
+		    </div>
+			
+			
+<!--people-->
+			<div class="collapsed section" id="people">
+				<div id="people-children" class="hidden">
+					<div class="line" style="background-color: #FFC1C1; width: 500px;"></div>
+					<h1>他们聊得好火热……要怎么回话呢？</h1>
+					<div id="green-talk" class="hidden">
+						<div id="green-red" class="question">
+						     <img src="img/green-red.png" alt="" width="800" style="position: absolute; top: 27%; left: 9%">
+						    <button class="chooseDone" 
+									onClick="if (peopleBubbleClicks[0].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; document.getElementById('green-black').classList.remove('hidden'); document.getElementById('green-red').classList.add('hidden')">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(0, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#E3F8F9"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="恭喜" onClick="handlePeopleBubbleClick(0, '恭喜')">
+								<svg width="210" height="98" viewBox="0 0 265 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M33.5 0H88.7217H232.193V28.8235L265 46.8382H232.193L216.5 70.5L168.5 79.6669H113.5L33.5 98L0 38.9118L33.5 0Z" fill="#E3F8F9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 28%; left: 12.5%"><strong>恭喜恭喜恭喜你呀！<br>（唱起来并扭动</strong></p>
+							<div class="你家农产品" onClick="handlePeopleBubbleClick(0, '你家农产品')">
+								<svg width="150" height="104" viewBox="0 0 197 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M33.5 24L113.5 19.5L163 0L154.5 19.5L197 52.8235L189.5 72.5L181 92L168.5 103.667H113.5H43.5L0 62.9118L33.5 24Z" fill="#E3F8F9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 13.5%; left: 21%"><strong>你的家乡有什么<br>特色农产品？</strong></p>
+							<div class="通路" onClick="handlePeopleBubbleClick(0, '通路')">
+								<svg width="150" height="116" viewBox="0 0 201 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.342 36.7344L54.842 16.7344L40.842 0.234375L83.342 7.73438L200.5 36.7344L194 88L161.5 101.5L40.842 115.734L0.5 71.5L13.342 36.7344Z" fill="#E3F8F9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14.5%; left: 42.5%"><strong>真好。希望我家乡<br>也能快通路。</strong></p>
+                        </div>
+						<div id="green-black" class="hidden question">
+						    <img src="img/green-black.png" alt="" width="800" style="position: absolute; top: 29%; left: 10%">
+						    <button class="chooseDone" 
+									onClick="if (peopleBubbleClicks[1].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; document.getElementById('green-pink').classList.remove('hidden'); document.getElementById('green-black').classList.add('hidden')">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(1, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#E3F8F9"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="升职" onClick="handlePeopleBubbleClick(1, '升职')">
+								<svg width="200" height="129" viewBox="0 0 265 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 9L131 0.5L232.193 24V52.8235L265 70.8382H232.193L216.5 94.5H166.5L131 129L33.5 122L0 62.9118L21 9Z" fill="#E3F8F9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 26.5%; left: 12.5%"><strong>你们升职需要走什么<br>程序，和上司的关系<br>很重要吗？</strong></p>
+							<div class="没事" onClick="handlePeopleBubbleClick(1, '没事')">
+								<svg width="180" height="92" viewBox="0 0 223 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M45.5 24L125.5 19.5L175 0L166.5 19.5L222.5 58L201.5 72.5L193 92H175L114 87L30.5 92L0.5 52.8235L45.5 24Z" fill="#E3F8F9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14%; left: 21%"><strong>没事还有下个季度！</strong></p>
+							<div class="通路" onClick="handlePeopleBubbleClick(1, '通路')">
+								<svg width="150" height="116" viewBox="0 0 201 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.342 36.7344L54.842 16.7344L40.842 0.234375L83.342 7.73438L200.5 36.7344L194 88L161.5 101.5L40.842 115.734L0.5 71.5L13.342 36.7344Z" fill="#E3F8F9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14.5%; left: 44%"><strong>我也是！咱们<br>同病相怜！</strong></p>
+                        </div>
+						<div id="green-pink" class="hidden question">
+						     <img src="img/green-pink.png" alt="" width="800" style="position: absolute; top: 29%; left: 10%">
+						    <button class="chooseDone" onClick="if (peopleBubbleClicks[2].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; ">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(2, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#E3F8F9"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="有名" onClick="handlePeopleBubbleClick(2, '有名')">
+								<svg width="200" height="129" viewBox="0 0 265 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 9L131 0.5L232.193 24V52.8235L265 70.8382H232.193L216.5 94.5L178.5 108L131 129L33.5 122L0 62.9118L21 9Z" fill="#E3F8F9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 26.5%; left: 12.5%"><strong>赞！是不是特别有名<br>的那家XX？到时候一<br>定要提前叫我！</strong></p>
+							<div class="海鲜" onClick="handlePeopleBubbleClick(2, '海鲜')">
+								<svg width="170" height="98" viewBox="0 0 220 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M30.5 13.5L125.5 19.5L175 0L166.5 19.5L220 31V69.5L193.5 98H166.5H111.5L13.5 92L0.5 52.8235L30.5 13.5Z" fill="#E3F8F9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14%; left: 21%"><strong>好耶，你们都喜欢吃<br>什么海鲜？</strong></p>
+							<div class="下次" onClick="handlePeopleBubbleClick(2, '下次')">
+								<svg width="150" height="102" viewBox="0 0 194 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.5 47L55.5 27.5L40.842 0.234375L91.5 27.5L181 36L194 88L161.5 101.5H48.5L0.5 71.5L17.5 47Z" fill="#E3F8F9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 17.5%; left: 44%"><strong>下次是啥时候？</strong></p>
+                        </div>
+					</div>
+					<div id="black-talk" class="hidden">
+						<div id="black-red" class="question">
+						     <img src="img/black-red.png" alt="" width="800" style="position: absolute; top: 27%; left: 9%">
+						    <button class="chooseDone" 
+									onClick="if (peopleBubbleClicks[0].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; document.getElementById('black-green').classList.remove('hidden'); document.getElementById('black-red').classList.add('hidden')">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(0, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#D9D9D9"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="恭喜" onClick="handlePeopleBubbleClick(0, '恭喜')">
+								<svg width="210" height="98" viewBox="0 0 265 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M33.5 0H88.7217H232.193V28.8235L265 46.8382H232.193L216.5 70.5L168.5 79.6669H113.5L33.5 98L0 38.9118L33.5 0Z" fill="#D9D9D9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 28%; left: 12.5%"><strong>恭喜恭喜恭喜你呀！<br>（唱起来并扭动</strong></p>
+							<div class="你家农产品" onClick="handlePeopleBubbleClick(0, '你家农产品')">
+								<svg width="150" height="104" viewBox="0 0 197 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M33.5 24L113.5 19.5L163 0L154.5 19.5L197 52.8235L189.5 72.5L181 92L168.5 103.667H113.5H43.5L0 62.9118L33.5 24Z" fill="#D9D9D9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 13.5%; left: 21%"><strong>你的家乡有什么<br>特色农产品？</strong></p>
+							<div class="通路" onClick="handlePeopleBubbleClick(0, '通路')">
+								<svg width="150" height="116" viewBox="0 0 201 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.342 36.7344L54.842 16.7344L40.842 0.234375L83.342 7.73438L200.5 36.7344L194 88L161.5 101.5L40.842 115.734L0.5 71.5L13.342 36.7344Z" fill="#D9D9D9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14.5%; left: 42.5%"><strong>真好。希望我家乡<br>也能快通路。</strong></p>
+                        </div>
+						<div id="black-green" class="hidden question">
+						     <img src="img/black-green.png" alt="" width="800" style="position: absolute; top: 29%; left: 10%">
+						    <button class="chooseDone" 
+									onClick="if (peopleBubbleClicks[1].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; document.getElementById('black-pink').classList.remove('hidden'); document.getElementById('black-green').classList.add('hidden')">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(1, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#D9D9D9"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="升职" onClick="handlePeopleBubbleClick(1, '升职')">
+								<svg width="200" height="129" viewBox="0 0 265 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 9L131 0.5L232.193 24V52.8235L265 70.8382H232.193L216.5 94.5H166.5L131 129L33.5 122L0 62.9118L21 9Z" fill="#D9D9D9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 26.5%; left: 12.5%"><strong>你们升职需要走什么<br>程序，和上司的关系<br>很重要吗？</strong></p>
+							<div class="没事" onClick="handlePeopleBubbleClick(1, '没事')">
+								<svg width="180" height="92" viewBox="0 0 223 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M45.5 24L125.5 19.5L175 0L166.5 19.5L222.5 58L201.5 72.5L193 92H175L114 87L30.5 92L0.5 52.8235L45.5 24Z" fill="#D9D9D9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14%; left: 21%"><strong>没事还有下个季度！</strong></p>
+							<div class="通路" onClick="handlePeopleBubbleClick(1, '通路')">
+								<svg width="150" height="116" viewBox="0 0 201 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.342 36.7344L54.842 16.7344L40.842 0.234375L83.342 7.73438L200.5 36.7344L194 88L161.5 101.5L40.842 115.734L0.5 71.5L13.342 36.7344Z" fill="#D9D9D9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14.5%; left: 44%"><strong>我也是！咱们<br>同病相怜！</strong></p>
+                        </div>
+						<div id="black-pink" class="hidden question">
+						     <img src="img/black-pink.png" alt="" width="800" style="position: absolute; top: 29%; left: 10%">
+						    <button class="chooseDone" onClick="if (peopleBubbleClicks[2].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; ">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(2, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#D9D9D9"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="有名" onClick="handlePeopleBubbleClick(2, '有名')">
+								<svg width="200" height="129" viewBox="0 0 265 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 9L131 0.5L232.193 24V52.8235L265 70.8382H232.193L216.5 94.5L178.5 108L131 129L33.5 122L0 62.9118L21 9Z" fill="#D9D9D9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 26.5%; left: 12.5%"><strong>赞！是不是特别有名<br>的那家XX？到时候一<br>定要提前叫我！</strong></p>
+							<div class="海鲜" onClick="handlePeopleBubbleClick(2, '海鲜')">
+								<svg width="170" height="98" viewBox="0 0 220 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M30.5 13.5L125.5 19.5L175 0L166.5 19.5L220 31V69.5L193.5 98H166.5H111.5L13.5 92L0.5 52.8235L30.5 13.5Z" fill="#D9D9D9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14%; left: 21%"><strong>好耶，你们都喜欢吃<br>什么海鲜？</strong></p>
+							<div class="下次" onClick="handlePeopleBubbleClick(2, '下次')">
+								<svg width="150" height="102" viewBox="0 0 194 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.5 47L55.5 27.5L40.842 0.234375L91.5 27.5L181 36L194 88L161.5 101.5H48.5L0.5 71.5L17.5 47Z" fill="#D9D9D9"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 17.5%; left: 44%"><strong>下次是啥时候？</strong></p>
+                        </div>
+					</div>
+					<div id="red-talk" class="hidden">
+						<div id="red-green" class="question">
+						     <img src="img/red-green.png" alt="" width="800" style="position: absolute; top: 27%; left: 9%">
+						    <button class="chooseDone" 
+									onClick="if (peopleBubbleClicks[0].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; document.getElementById('red-black').classList.remove('hidden'); document.getElementById('red-green').classList.add('hidden')">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(0, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#E0D4C8"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="恭喜" onClick="handlePeopleBubbleClick(0, '恭喜')">
+								<svg width="210" height="98" viewBox="0 0 265 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M33.5 0H88.7217H232.193V28.8235L265 46.8382H232.193L216.5 70.5L168.5 79.6669H113.5L33.5 98L0 38.9118L33.5 0Z" fill="#E0D4C8"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 28%; left: 12.5%"><strong>恭喜恭喜恭喜你呀！<br>（唱起来并扭动</strong></p>
+							<div class="你家农产品" onClick="handlePeopleBubbleClick(0, '你家农产品')">
+								<svg width="150" height="104" viewBox="0 0 197 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M33.5 24L113.5 19.5L163 0L154.5 19.5L197 52.8235L189.5 72.5L181 92L168.5 103.667H113.5H43.5L0 62.9118L33.5 24Z" fill="#E0D4C8"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 13.5%; left: 21%"><strong>你的家乡有什么<br>特色农产品？</strong></p>
+							<div class="通路" onClick="handlePeopleBubbleClick(0, '通路')">
+								<svg width="150" height="116" viewBox="0 0 201 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.342 36.7344L54.842 16.7344L40.842 0.234375L83.342 7.73438L200.5 36.7344L194 88L161.5 101.5L40.842 115.734L0.5 71.5L13.342 36.7344Z" fill="#E0D4C8"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14.5%; left: 42.5%"><strong>真好。希望我家乡<br>也能快通路。</strong></p>
+                        </div>
+						<div id="red-black" class="hidden question">
+						     <img src="img/red-black.png" alt="" width="800" style="position: absolute; top: 29%; left: 10%">
+						    <button class="chooseDone" 
+									onClick="if (peopleBubbleClicks[1].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; document.getElementById('red-pink').classList.remove('hidden'); document.getElementById('red-black').classList.add('hidden')">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(1, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#E0D4C8"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="升职" onClick="handlePeopleBubbleClick(1, '升职')">
+								<svg width="200" height="129" viewBox="0 0 265 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 9L131 0.5L232.193 24V52.8235L265 70.8382H232.193L216.5 94.5H166.5L131 129L33.5 122L0 62.9118L21 9Z" fill="#E0D4C8"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 26.5%; left: 12.5%"><strong>你们升职需要走什么<br>程序，和上司的关系<br>很重要吗？</strong></p>
+							<div class="没事" onClick="handlePeopleBubbleClick(1, '没事')">
+								<svg width="180" height="92" viewBox="0 0 223 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M45.5 24L125.5 19.5L175 0L166.5 19.5L222.5 58L201.5 72.5L193 92H175L114 87L30.5 92L0.5 52.8235L45.5 24Z" fill="#E0D4C8"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14%; left: 21%"><strong>没事还有下个季度！</strong></p>
+							<div class="通路" onClick="handlePeopleBubbleClick(1, '通路')">
+								<svg width="150" height="116" viewBox="0 0 201 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.342 36.7344L54.842 16.7344L40.842 0.234375L83.342 7.73438L200.5 36.7344L194 88L161.5 101.5L40.842 115.734L0.5 71.5L13.342 36.7344Z" fill="#E0D4C8"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14.5%; left: 44%"><strong>我也是！咱们<br>同病相怜！</strong></p>
+                        </div>
+						<div id="red-pink" class="hidden question">
+						     <img src="img/red-pink.png" alt="" width="800" style="position: absolute; top: 29%; left: 10%">
+						    <button class="chooseDone" onClick="if (peopleBubbleClicks[2].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; ">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(2, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#E0D4C8"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="有名" onClick="handlePeopleBubbleClick(2, '有名')">
+								<svg width="200" height="129" viewBox="0 0 265 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 9L131 0.5L232.193 24V52.8235L265 70.8382H232.193L216.5 94.5L178.5 108L131 129L33.5 122L0 62.9118L21 9Z" fill="#E0D4C8"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 26.5%; left: 12.5%"><strong>赞！是不是特别有名<br>的那家XX？到时候一<br>定要提前叫我！</strong></p>
+							<div class="海鲜" onClick="handlePeopleBubbleClick(2, '海鲜')">
+								<svg width="170" height="98" viewBox="0 0 220 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M30.5 13.5L125.5 19.5L175 0L166.5 19.5L220 31V69.5L193.5 98H166.5H111.5L13.5 92L0.5 52.8235L30.5 13.5Z" fill="#E0D4C8"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14%; left: 21%"><strong>好耶，你们都喜欢吃<br>什么海鲜？</strong></p>
+							<div class="下次" onClick="handlePeopleBubbleClick(2, '下次')">
+								<svg width="150" height="102" viewBox="0 0 194 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.5 47L55.5 27.5L40.842 0.234375L91.5 27.5L181 36L194 88L161.5 101.5H48.5L0.5 71.5L17.5 47Z" fill="#E0D4C8"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 17.5%; left: 44%"><strong>下次是啥时候？</strong></p>
+                        </div>
+					</div>
+					<div id="pink-talk" class="hidden">
+						<div id="pink-red" class="question">
+						     <img src="img/pink-red.png" alt="" width="800" style="position: absolute; top: 27%; left: 9%">
+						    <button class="chooseDone" 
+									onClick="if (peopleBubbleClicks[0].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; document.getElementById('pink-black').classList.remove('hidden'); document.getElementById('pink-red').classList.add('hidden')">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(0, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#F8E2E6"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="恭喜" onClick="handlePeopleBubbleClick(0, '恭喜')">
+								<svg width="210" height="98" viewBox="0 0 265 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M33.5 0H88.7217H232.193V28.8235L265 46.8382H232.193L216.5 70.5L168.5 79.6669H113.5L33.5 98L0 38.9118L33.5 0Z" fill="#F8E2E6"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 28%; left: 12.5%"><strong>恭喜恭喜恭喜你呀！<br>（唱起来并扭动</strong></p>
+							<div class="你家农产品" onClick="handlePeopleBubbleClick(0, '你家农产品')">
+								<svg width="150" height="104" viewBox="0 0 197 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M33.5 24L113.5 19.5L163 0L154.5 19.5L197 52.8235L189.5 72.5L181 92L168.5 103.667H113.5H43.5L0 62.9118L33.5 24Z" fill="#F8E2E6"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 13.5%; left: 21%"><strong>你的家乡有什么<br>特色农产品？</strong></p>
+							<div class="通路" onClick="handlePeopleBubbleClick(0, '通路')">
+								<svg width="150" height="116" viewBox="0 0 201 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.342 36.7344L54.842 16.7344L40.842 0.234375L83.342 7.73438L200.5 36.7344L194 88L161.5 101.5L40.842 115.734L0.5 71.5L13.342 36.7344Z" fill="#F8E2E6"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14.5%; left: 42.5%"><strong>真好。希望我家乡<br>也能快通路。</strong></p>
+                        </div>
+						<div id="pink-black" class="hidden question">
+						     <img src="img/pink-black.png" alt="" width="800" style="position: absolute; top: 29%; left: 10%">
+						    <button class="chooseDone" 
+									onClick="if (peopleBubbleClicks[1].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; document.getElementById('pink-green').classList.remove('hidden'); document.getElementById('pink-black').classList.add('hidden')">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(1, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#F8E2E6"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="升职" onClick="handlePeopleBubbleClick(1, '升职')">
+								<svg width="200" height="129" viewBox="0 0 265 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 9L131 0.5L232.193 24V52.8235L265 70.8382H232.193L216.5 94.5H166.5L131 129L33.5 122L0 62.9118L21 9Z" fill="#F8E2E6"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 26.5%; left: 12.5%"><strong>你们升职需要走什么<br>程序，和上司的关系<br>很重要吗？</strong></p>
+							<div class="没事" onClick="handlePeopleBubbleClick(1, '没事')">
+								<svg width="180" height="92" viewBox="0 0 223 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M45.5 24L125.5 19.5L175 0L166.5 19.5L222.5 58L201.5 72.5L193 92H175L114 87L30.5 92L0.5 52.8235L45.5 24Z" fill="#F8E2E6"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14%; left: 21%"><strong>没事还有下个季度！</strong></p>
+							<div class="通路" onClick="handlePeopleBubbleClick(1, '通路')">
+								<svg width="150" height="116" viewBox="0 0 201 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.342 36.7344L54.842 16.7344L40.842 0.234375L83.342 7.73438L200.5 36.7344L194 88L161.5 101.5L40.842 115.734L0.5 71.5L13.342 36.7344Z" fill="#F8E2E6"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14.5%; left: 44%"><strong>我也是！咱们<br>同病相怜！</strong></p>
+                        </div>
+						<div id="pink-green" class="hidden question">
+						     <img src="img/pink-green.png" alt="" width="800" style="position: absolute; top: 29%; left: 10%">
+						    <button class="chooseDone" onClick="if (peopleBubbleClicks[2].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; ">选好了</button>
+						    <div class="沉默" onClick="handlePeopleBubbleClick(2, '沉默')">
+							  <svg width="230" height="80" viewBox="0 0 294 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	  <path d="M24.2039 0H129.029H272.5L263.5 32.5L294 82L239.193 60.2443L202.922 55.2791H119.291H24.2039L0.5 26L24.2039 0Z" fill="#F8E2E6"/>
+							  </svg>
+						    </div>
+						    <p style="position: absolute; bottom: 42%; left: 9.5%"><strong>……（我回了，回了沉默）</strong></p>
+							<div class="有名" onClick="handlePeopleBubbleClick(2, '有名')">
+								<svg width="200" height="129" viewBox="0 0 265 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 9L131 0.5L232.193 24V52.8235L265 70.8382H232.193L216.5 94.5L178.5 108L131 129L33.5 122L0 62.9118L21 9Z" fill="#F8E2E6"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 26.5%; left: 12.5%"><strong>赞！是不是特别有名<br>的那家XX？到时候一<br>定要提前叫我！</strong></p>
+							<div class="海鲜" onClick="handlePeopleBubbleClick(2, '海鲜')">
+								<svg width="170" height="98" viewBox="0 0 220 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M30.5 13.5L125.5 19.5L175 0L166.5 19.5L220 31V69.5L193.5 98H166.5H111.5L13.5 92L0.5 52.8235L30.5 13.5Z" fill="#F8E2E6"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 14%; left: 21%"><strong>好耶，你们都喜欢吃<br>什么海鲜？</strong></p>
+							<div class="下次" onClick="handlePeopleBubbleClick(2, '下次')">
+								<svg width="150" height="102" viewBox="0 0 194 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.5 47L55.5 27.5L40.842 0.234375L91.5 27.5L181 36L194 88L161.5 101.5H48.5L0.5 71.5L17.5 47Z" fill="#F8E2E6"/>
+								</svg>
+						    </div>
+						    <p style="position: absolute; bottom: 17.5%; left: 44%"><strong>下次是啥时候？</strong></p>
+                        </div>
+					</div>
+				</div>
+				<div class="icon-container" id="icp">
+					<svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M5.00059 3.75C6.03574 3.75 6.87559 2.91016 6.87559 1.875C6.87559 0.839844 6.03574 0 5.00059 0C3.96543 0 3.12559 0.839844 3.12559 1.875C3.12559 2.91016 3.96543 3.75 5.00059 3.75ZM20.0006 3.75C21.0357 3.75 21.8756 2.91016 21.8756 1.875C21.8756 0.839844 21.0357 0 20.0006 0C18.9654 0 18.1256 0.839844 18.1256 1.875C18.1256 2.91016 18.9654 3.75 20.0006 3.75ZM24.9107 18.2852L23.192 13.9883L21.5865 15.8008L21.5084 16.5117L22.5904 19.2148C22.7857 19.7031 23.2545 20 23.7506 20C23.9068 20 24.0631 19.9727 24.2154 19.9102C24.8561 19.6523 25.1686 18.9258 24.9107 18.2852ZM23.5748 10.0898L22.8521 6.95703C22.6725 6.17578 22.1256 5.51953 21.3873 5.20312C20.6646 4.89062 19.8639 4.94141 19.1959 5.33203C18.3092 5.85547 17.6451 6.67969 17.317 7.65234L16.8756 8.97656L16.2506 9.375V5.625C16.2506 5.28125 15.9693 5 15.6256 5H9.37559C9.03184 5 8.75059 5.28125 8.75059 5.625V9.375L8.12168 8.97656L7.68027 7.65234C7.35605 6.67578 6.68809 5.85547 5.80137 5.33203C5.12949 4.94141 4.33262 4.89062 3.60996 5.20312C2.87168 5.51953 2.3248 6.17578 2.14512 6.95703L1.42637 10.0898C1.24668 10.8711 1.45371 11.6992 1.98887 12.3047L4.61387 15.2695L5.0084 18.8867C5.07871 19.5234 5.61777 20 6.25059 20C6.29746 20 6.34043 19.9961 6.3873 19.9922C7.0748 19.918 7.56699 19.3008 7.49277 18.6133L7.09824 14.9883C7.03965 14.4805 6.82871 14.0078 6.48887 13.6211L4.79746 11.707L5.48496 8.96094L5.75059 9.75781C5.91074 10.2461 6.21543 10.6719 6.70762 11.0312L8.70371 12.3008C8.8834 12.4141 9.17637 12.4805 9.37559 12.4961H15.6256C15.8248 12.4805 16.1178 12.4141 16.2975 12.3008L18.2936 11.0312C18.7857 10.6719 19.0904 10.25 19.2506 9.75781L19.5162 8.96094L20.2037 11.707L18.5123 13.6211C18.1725 14.0078 17.9615 14.4805 17.9029 14.9883L17.5084 18.6133C17.4342 19.3008 17.9303 19.918 18.6139 19.9922C18.6607 19.9961 18.7037 20 18.7506 20C19.3795 20 19.9225 19.5273 19.9928 18.8867L20.3873 15.2695L23.0123 12.3047C23.5436 11.6992 23.7545 10.8711 23.5748 10.0898ZM1.80918 13.9883L0.0904288 18.2852C-0.167384 18.9258 0.145116 19.6523 0.785741 19.9102C1.44199 20.168 2.15684 19.8438 2.41074 19.2148L3.49277 16.5117L3.41465 15.8008L1.80918 13.9883Z" fill="#FF3E3E"/>
+					</svg>
+				</div>
+			  <div class="hidden next" onclick="if (peopleBubbleClicks[2].length === 0) {
+											 alert('请选一句最符合你性格的话吧~'); return;
+											 }; switchContent('turntable', ['transport', 'food', 'main-clothes', 'people']); document.getElementById('turntable').classList.remove('hidden'); changeDivContent('icp')">
+					<p class="arrow">→</p>
+				</div>
+		    </div>
+			
+<!--turntable-->
+			<div id="turntable" class="hidden section">
+				<h1>留下你的姓名，然后点击旋转转盘前往好住之地吧！</h1>
+				<img src="img/turntable.png" alt="" width="500" style="position: absolute; left: 20%; top: 10%">
+				<form id="inputForm" onsubmit="return saveNameAndRedirect(event)" style="position: absolute; bottom: 15%; left: 20%">
+					<label for="userInput">我的名字是：</label>
+					<input type="text" id="userInput" name="userInput" required>
+					<button type="submit" style="background: #DBF092; border: none; width: 100px; height: 50px; margin-left: 50px; border-radius: 50px; font-size: 16px; cursor: pointer">旋转转盘</button>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+    <script src="script.js"></script>
+</body>
+</html>

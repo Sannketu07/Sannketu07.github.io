@@ -1,0 +1,416 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+
+.hidden {
+    display: none !important;
+}
+.visible {
+    display: block !important;
+}
+
+.collapsed {
+	width: 46px
+}
+
+.expanded {
+	width: 1000px;
+}
+
+.section {
+	position: relative;
+	display: inline-flex;
+	height: 710px;
+	border-radius: 50px;
+	margin-right: 15px;
+	transition: width 0.5s, background-color 0.5s;
+}
+
+.icon-container {
+	position: absolute;
+	bottom: 0%;
+	width: 45px;
+	height: 45px;
+	border-radius: 100px;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+
+.icon-container.icon-completed {
+	background-color: #68CE83;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid;
+	border-color: #68CE83 !important
+}
+
+.Whole-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.logo-nav-bar {
+	margin: 10px auto;
+	display: flex;
+	justify-content: center;
+	max-width: 1280px;
+	position: relative;
+}
+
+.logo-nav {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.Container1 {
+	max-width: 1280px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+#main-clothes {
+	background-image: url("img/绿背景.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#main-clothes.collapsed {
+    background-color: #C4F2BC;
+    background-image: none;
+}
+
+#pink {
+	position: absolute; 
+	top: 38%; 
+	right: 27%; 
+}
+
+#green {
+	position: absolute; 
+	top: 38%; 
+	left: 8%; 
+	display: flex;
+	justify-content: center;
+}
+
+#black {
+	position: absolute; 
+	top: 38%; 
+	left: 31%; 
+}
+
+#red {
+	position: absolute; 
+	top: 38%; 
+	right: 8%;
+}
+
+#绿 {
+	position: absolute;
+	top: 25%;
+	left: 3%;
+	cursor: pointer
+}
+
+#红 {
+	position: absolute;
+	top: 25%;
+	right: 3%;
+	cursor: pointer
+}
+
+#黑 {
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	cursor: pointer
+}
+
+#粉 {
+	position: absolute;
+	top: 25%;
+	right: 23%;
+	cursor: pointer
+}
+
+.next {
+	width: 50px;
+	height: 50px;
+	background-color: #68CE83;
+	border-radius: 100px;
+	position: absolute;
+	right: 2%;
+	bottom: 2.5%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	cursor: pointer
+}
+
+.line {
+	height: 15px;
+	border-radius: 20px;
+	position: absolute;
+	top: 10%;
+	left: 10%
+}
+
+h1 {
+	position: absolute;
+	left: 10%;
+	top: 3%;
+	font-family: "Noto Sans SC", sans-serif;
+	font-weight: 800
+}
+
+.arrow {
+	margin: 0;
+	font-size: 30px;
+	color: white;
+	font-family: "Noto Sans SC", sans-serif;
+	font-optical-sizing: auto;
+ 	font-weight: 350;
+    font-style: normal;
+}
+
+#green-text {
+	position: absolute;
+	bottom: 5%;
+	left: 15%;
+	font-family: "Noto Sans SC", sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+#black-text {
+	position: absolute;
+	bottom: 6%;
+	left: 23%;
+	font-family: "Noto Sans SC", sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+#pink-text {
+	position: absolute;
+	bottom: 5.7%;
+	left: 23%;
+	font-family: "Noto Sans SC", sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+#red-text {
+	position: absolute;
+	bottom: 6%;
+	left: 17%;
+	font-family: "Noto Sans SC", sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+}
+#transport {
+	background-color: #A9DBFF;
+}
+
+#transport.expanded {
+    background-image: url("img/transport-background.png") !important;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#transport .icon-container {
+	border: solid 1px #47b2ff;
+}
+
+#transport.collapsed {
+    background-color: #A9DBFF;
+    background-image: none;
+}
+
+#food {
+	background-color: #FFE587;
+}
+
+#food .icon-container {
+	border: solid 1px #E5AD08;
+}
+
+#people {
+	background-color: #FFA1A1;
+}
+
+#people .icon-container {
+	border: solid 1px #EB4335;
+}
+#subway {
+	position: absolute;
+	top: 25%;
+	left: 15%;
+	cursor: pointer
+}
+
+#car {
+	position: absolute;
+	top: 26%;
+	left: 34%;
+	cursor: pointer
+}
+
+#bicycle {
+	position: absolute;
+	top: 28%;
+	right: 30%;
+	cursor: pointer
+}
+
+#walk {
+	position: absolute;
+	top: 25%;
+	right: 15%;
+	cursor: pointer
+}
+
+#地铁 {
+	position: absolute;
+	top: 25%;
+	left: 13%
+}
+
+#机动车 {
+	position: absolute;
+	top: 25%;
+	left: 33%
+}
+
+#自行车 {
+	position: absolute;
+	top: 25%;
+	right: 30%
+}
+
+#步行 {
+	position: absolute;
+	top: 25%;
+	right: 11%
+}
+
+#food.expanded {
+    background-image: url("img/food-background.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+#done {
+	background-color: #7C5900;
+	border: none;
+	border-radius: 50px;
+	color: white;
+	font-size: 25px;
+	text-align: center;
+	cursor: pointer;
+	width: 210px;
+	height: 60px;
+	position: absolute;
+	bottom: 10%;
+	left: 42%
+}
+
+#people.expanded {
+    background-image: url("img/people-background.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.chooseDone {
+	text-align: center;
+	cursor: pointer;
+	width: 75px;
+	height: 25px;
+	border: none;
+	border-radius: 20px;
+	background-color: #ABE5BB;
+	position: absolute;
+	bottom: 24%;
+	left: 34%
+}
+
+
+
+.沉默 {
+	position: absolute;
+	bottom: 38%;
+	left: 8%;
+	cursor: pointer
+}
+
+.恭喜 {
+	position: absolute;
+	bottom: 25%;
+	left: 10%;
+	cursor: pointer
+}
+
+.你家农产品 {
+	position: absolute;
+	left: 19%;
+	bottom: 12%;
+	cursor: pointer
+}
+
+
+.通路 {
+	position: absolute;
+	bottom: 12%;
+	left: 41%;
+	cursor: pointer
+}
+.升职 {
+	position: absolute;
+	bottom: 23%;
+	left: 11%
+}
+
+.没事 {
+	position: absolute;
+	bottom: 12%;
+	left: 19%
+}
+
+.有名 {
+	position: absolute;
+	left: 11%;
+	bottom: 23%
+}
+
+.海鲜 {
+	position: absolute;
+	bottom: 13%;
+	left: 19%
+}
+
+.下次 {
+	position: absolute;
+	bottom: 15%;
+	left: 41%
+}
+
+.street {
+	position: absolute;
+	bottom: 8%;
+	left: 35%
+}
+
+

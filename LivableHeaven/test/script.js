@@ -328,10 +328,12 @@ function switchContent(main, nmains) {
 
 
     function saveNameAndRedirect(event) {
-        event.preventDefault(); // 阻止表单的默认提交行为
-        const userName = document.getElementById('userInput').value;
-        localStorage.setItem('userName', userName); // 将用户名保存到localStorage
-        window.location.href = "../result/beijing.html"; // 跳转到beijing.html
-        return false;
-    }
-    
+    event.preventDefault();  // 阻止默认提交行为
+
+    const userName = document.getElementById('userInput').value;
+    localStorage.setItem('userName', userName);  // 将用户名保存到localStorage
+
+    calculateFinalScores();  // 调用得分计算和页面跳转函数
+    return false;  // 防止表单默认提交
+}
+
